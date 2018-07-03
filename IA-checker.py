@@ -6,7 +6,7 @@ import csv
 fname = input('Enter file name: ')
 url_list = open(fname)
 crawlsum_csv = 'crawl_summary.csv'
-crawlsum = open(crawlsum_csv, "w", newline='')
+crawlsum = open(crawlsum_csv, "a", newline='')
 crawlsum_csv = csv.writer(crawlsum, delimiter=',')
 
 for the_url in url_list:
