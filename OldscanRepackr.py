@@ -4,7 +4,7 @@ from pathlib import Path
 import platform
 
 #input file path that needs to be repacked
-pack = input('what needs repacking, kid?')
+pack = input('what needs repacking, kid? ')
 folders = os.listdir(pack)
 
 for root, dirs, files in os.walk(pack, topdown=True):
@@ -21,7 +21,12 @@ for root, dirs, files in os.walk(pack, topdown=True):
                     if not os.path.exists(newmeta):
                         os.makedirs(newmeta)
                     if not os.path.exists(os.path.join(newmeta, name)):
-                        shutil.move(fpath, newmeta)
+                        if not platform.system() == 'Windows':
+                            os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
+                            + os.path.join(pack, 'rsync.log')
+                            + " " + fpath + " " + newmeta)
+                        else:
+                            shutil.move(fpath, newmeta)
 
                 else:
                     objfold = str(Path(fpath).parents[2])
@@ -31,11 +36,21 @@ for root, dirs, files in os.walk(pack, topdown=True):
                     if not os.path.exists(newsubdoc):
                         os.makedirs(newsubdoc)
                     if not os.path.exists(os.path.join(newsubdoc, name)):
-                        shutil.move(fpath, newsubdoc)
+                        if not platform.system() == 'Windows':
+                            os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
+                            + os.path.join(pack, 'rsync.log')
+                            + " " + fpath + " " + newsubdoc)
+                        else:
+                            shutil.move(fpath, newsubdoc)
         else:
             if 'access' not in fpath:
                 parent_dir = str(Path(fpath).parents[1])
-                shutil.move(fpath, parent_dir)
+                if not platform.system() == 'Windows':
+                    os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
+                    + os.path.join(pack, 'rsync.log')
+                    + " " + fpath + " " + parent_dir)
+                else:
+                    shutil.move(fpath, parent_dir)
             else:
                 objfold = str(Path(fpath).parents[2])
                 objfold = os.path.split(objfold)
@@ -44,7 +59,7 @@ for root, dirs, files in os.walk(pack, topdown=True):
                 if not os.path.exists(newaccess):
                     os.makedirs(newaccess)
                 if not os.path.exists(os.path.join(newaccess, name)):
-                    if platform.system() == 'Linux':
+                    if not platform.system() == 'Windows':
                         os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
                         + os.path.join(pack, 'rsync.log')
                         + " " + fpath + " " + newaccess)
