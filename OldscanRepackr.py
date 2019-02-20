@@ -24,7 +24,7 @@ for root, dirs, files in os.walk(pack, topdown=True):
                         if not platform.system() == 'Windows':
                             os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
                             + os.path.join(pack, 'rsync.log')
-                            + " " + fpath + " " + newmeta)
+                            + " '" + fpath + "' " + newmeta)
                         else:
                             shutil.move(fpath, newmeta)
 
@@ -39,7 +39,7 @@ for root, dirs, files in os.walk(pack, topdown=True):
                         if not platform.system() == 'Windows':
                             os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
                             + os.path.join(pack, 'rsync.log')
-                            + " " + fpath + " " + newsubdoc)
+                            + " '" + fpath + "' " + newsubdoc)
                         else:
                             shutil.move(fpath, newsubdoc)
         else:
@@ -48,7 +48,7 @@ for root, dirs, files in os.walk(pack, topdown=True):
                 if not platform.system() == 'Windows':
                     os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
                     + os.path.join(pack, 'rsync.log')
-                    + " " + fpath + " " + parent_dir)
+                    + " '" + fpath + "' " + parent_dir)
                 else:
                     shutil.move(fpath, parent_dir)
             else:
@@ -62,13 +62,15 @@ for root, dirs, files in os.walk(pack, topdown=True):
                     if not platform.system() == 'Windows':
                         os.system('rsync -a -h --progress --stats --checksum --exclude=".*" --exclude="~*" --log-file='
                         + os.path.join(pack, 'rsync.log')
-                        + " " + fpath + " " + newaccess)
+                        + " '" + fpath + "' " + newaccess)
                     else:
                         shutil.move(fpath, newaccess)
 
 for fname in folders:
-    shutil.rmtree(os.path.join(pack, fname, 'objects'))
-    shutil.rmtree(os.path.join(pack, fname, 'metadata'))
+    if os.path.exists(os.path.join(pack, fname, 'objects')):
+        shutil.rmtree(os.path.join(pack, fname, 'objects'))
+    if os.path.exists(os.path.join(pack, fname, 'metadata')):
+        shutil.rmtree(os.path.join(pack, fname, 'metadata'))
 
 if os.path.exists(os.path.join(pack, 'rsync.log')):
     shutil.move(os.path.join(pack, 'rsync.log'), os.path.join(pack, 'metadata', 'submissionDocumentation'))
