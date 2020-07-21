@@ -169,7 +169,7 @@ complaint.{1,5}file
 #treatment
 [T|t]reatment
 #surgery/ical
-[S|s]urgical
+[S|s]urg(ery|ical)
 #mental health
 [M|m]ental\shealth
 #patient
