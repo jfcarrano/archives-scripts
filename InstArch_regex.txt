@@ -1,0 +1,226 @@
+#$ number K salary
+\$?\d{1,3}K?.{1,9}salary
+#salary $ number
+salary.{1,10}\$?\d{1,7}
+#salary
+[S|s]alary
+#your salary
+[Y|y]our\ssalary
+#number K stipend
+\$?\d{1,3}K?.{1,9}stipend
+#stipend $ number
+stipend.{1,10}\$?\d{1,7}
+#stipend
+[S|s]stipend
+#your stipend
+[Y|y]our\sstipend
+#application of/for/to
+[a|A]pplication\s(of|for|to)
+#this completed application
+[T|t]his\scompleted\sapplication
+#opportunity to apply
+[O|o]pportunity\sto\sapply
+#number (dash, space or underscore) application
+(\d{2,4}[-|\s|_])[A|a]pplications?
+#application (dash, space or underscore) number
+[A|a]pplications?([-|\s|_]\d{2,4})
+#her/his/their/your/my application
+([H|h]er|[H|h]is|[T|t]heir|[Y|y]our|[M|m]y)\sapplications?
+#student appeal
+[S|s]tudent\sappeal
+#appeal by student
+[A|a]ppeal\sby\sstudent
+#appeal but not appealing
+[A|a]ppeal(?!ing$)
+#self evaluation
+[S|s]elf[-|\s|_]evaluation
+#performance review or evaluation
+[P|p]erformance\s(review|evaluation|appraisal)
+#annual review
+[A|a]nnual\sreview
+#institutional review board
+[I|i]nstitutional\s[R|r]eview\s[b|B]oard
+#grade point average
+[G|g]rade\s[p|P]oint\s[A|a]verage
+#IRB
+I\.?R\.?B\.?
+#GPA
+G\.?P\.?A\.?
+#her/his/their/your/my promotion
+([H|h]er|[H|h]is|[T|t]heir|[Y|y]our|[M|m]y)\spromotion
+#tenure review
+[T|t]enure\sreview
+#rank and tenure review
+[R|r]ank\sand\s[T|t]enure\sreview
+#disciplinary action
+[D|d]isciplinary\s[A|a]ction
+#judicial
+[J|j]udicial
+#report (1-7 characters) assault
+report.{1,7}assault
+#cheat
+[C|c]heat
+#malfeasance
+[M|m]alfeasance
+#file (1-4 characters) complaint
+file.{1,4}complaint
+#filing (1-5 characters) complaint
+filing.{1,5}compllaint
+#complaint (1-5 characters) file
+complaint.{1,5}file
+#grade but does not start with de, retro, up, down, centi
+(?!^([D|d]e|[R|r]etro|[U|u]p|[D|d]own][C|c]enti]))[G|g]rade
+#tenure denied/al
+[T|t]enure\sdeni(ed|al)
+#deny/ied tenure
+[D|d]en(y|ied)\stenure
+#fraud
+[F|f]raud
+#academic fraud
+[A|a]cademic\sfraud
+#theft
+[T|t]heft
+#sexual assault or harrassment
+[S|s]exual\s(assault|harrassment)
+#harrass
+[H|h]arrass
+#sex or gender discrimination
+([S|s]ex|[G|g]ender)\sdiscrimination
+#discrimination
+[D|d]iscrimination
+#concealment
+[C|c]oncealment
+#toxicant
+[T|t]oxicant
+#drunk
+[D|d]runk
+#underage
+[U|u]nderage
+#underage drink
+[U|u]nderage\sdrink
+#unwarranted advances
+[U|u]nwarrented\sadvances
+#racist/ism
+[R|r]acis(t|m)
+#sexist/ism
+[S|s]exis(t|m)
+#homophobia/ic
+[H|h]omophobi(a|c)
+#antisemitism/ic or anti-semitism/ic
+[A|a]nti\D?semiti(c|sm)
+#plagiarize/ism
+[P|p]lagiari(ze|sm)
+#physically threaten
+[P|p]hysically\sthreaten
+#litigation
+[L|l]itigation
+#lawsuit
+[L|l]awsuit
+#legal action
+[L|l]egal\saction
+#grievance
+[G|g]rievance
+#General Counsel
+[G|g]eneral\s[C|c]ounsel
+#expel
+[E|e]xpel
+#probation
+[P|p]robation
+#background or credit check
+([B|b]ackground|[C|c]redit)\scheck
+#letter of recommendation
+[L|l]etter\sof\srecommendation
+#recommend
+[R|r]ecommend
+#transcript
+[T|t]ranscript
+#contract renewal
+[C|c]ontract\srenewal
+#Student Conduct and Community Standards
+[S|s]tudent\s[C|c]onduct\sand\s[C|c]ommunity\s[S|s]tandards
+#Committee on Discipline
+[C|c]ommittee\son\s[D|d]iscipline
+#nominate/ion/ing
+[N|n]ominat(e|ion|ing)
+#taxes
+[T|t]axes
+#stock but does not start with re, laughing, or live, or end with ing
+(?!^([R|r]e|[L|l]aughing]|[L|l]ive))[S|s]tock(?!ing$)
+#donation
+[D|d]onation
+#Resource Development Office
+[R|r]esource\s[D|d]evelopment\s[O|o]ffice
+#pension
+[P|p]ension
+#401k
+401\s?[K|k]
+#roth
+[R|r]oth
+#benefits
+[B|b]enefits
+#medical
+[M|m]edical
+#test result
+[T|t]est\sresult
+#therapy
+[T|t]herapy
+#prescription
+[P|p]rescription
+#treatment
+[T|t]reatment
+#surgery/ical
+[S|s]urgical
+#mental health
+[M|m]ental\shealth
+#patient
+[P|p]atient
+#sick
+[S|s]ick
+#injury
+[I|i]njury
+#healthcare
+[H|h]healthcare
+#Insurance
+[I|i]insurance
+#copay or co(-)pay
+[C|c]o\D?pay
+#pcard
+[P|p]card
+#procurement card
+[P|p]rocurement\scard
+#procurement
+[P|p]rocurement
+#shortfall
+[S|s]hortfall
+#payout
+[P|p]ayout
+#PIRN or P.I.R.N.
+P\.?I\.?R\.?N\.?
+#MIT Corporation or M.I.T. corporation
+M\.?I\.?T\.?\s[C|c]orporation
+#visiting committee
+[V|v]isiting\s[C|c]ommittee
+#Human Resources
+[H|h]uman\s[R|r]esources
+#outside activities
+[O|o]utside\s[A|a]ctivities
+#conflict(s) of interest
+[C|c]onflicts?\sof\sinterest
+#disability
+[D|d]isability
+#accomodation
+[A|a]ccomodation
+#affirmative action
+[A|a]ffirmative\saction
+#personnel
+[P|p]ersonnel
+#job offer
+[J|j]ob\soffer
+#COUHES or C.O.U.H.E.S. or couhes
+[C|c]\.?[O|o]\.?[U|u]\.?[H|h]\.?[E|e]\.?[S|s]\.?
+#Committee on the Use of Humans as Experimental Subjects
+[C|c]ommittee\s[O|o]n\s[T|t]he\s[U|u]se\s[O|o]f\s[H|h]umans\s[A|a]s\s[E|e]xperimental\s[S|s]ubjects
+#human research
+[H|h]uman\sresearch
+#consent
+[C|c]onsent
