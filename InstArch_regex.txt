@@ -31,7 +31,8 @@ stipend.{1,10}\$?\d{1,7}
 #appeal by student
 [A|a]ppeal\sby\sstudent
 #appeal but not appealing
-[A|a]ppeal(?!ing$)
+[A|a]ppeal
+#[A|a]ppeal(?!ing$) - parentheses negative lookahead unable to compile in bulk_extractor
 #self evaluation
 [S|s]elf[-|\s|_]evaluation
 #performance review or evaluation
@@ -69,7 +70,8 @@ filing.{1,5}compllaint
 #complaint (1-5 characters) file
 complaint.{1,5}file
 #grade but does not start with de, retro, up, down, centi
-(?!^([D|d]e|[R|r]etro|[U|u]p|[D|d]own][C|c]enti]))[G|g]rade
+[G|g]rade
+#(?!^([D|d]e|[R|r]etro|[U|u]p|[D|d]own][C|c]enti]))[G|g]rade - parentheses negative lookahead unable to compile in bulk_extractor
 #tenure denied/al
 [T|t]enure\sdeni(ed|al)
 #deny/ied tenure
@@ -145,7 +147,8 @@ complaint.{1,5}file
 #taxes
 [T|t]axes
 #stock but does not start with re, laughing, or live, or end with ing
-(?!^([R|r]e|[L|l]aughing]|[L|l]ive))[S|s]tock(?!ing$)
+[S|s]tock
+#(?!^([R|r]e|[L|l]aughing]|[L|l]ive))[S|s]tock(?!ing$) - parentheses negative lookahead unable to compile in bulk_extractor
 #donation
 [D|d]onation
 #Resource Development Office
