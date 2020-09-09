@@ -163,8 +163,8 @@ complaint.{1,5}file
 [B|b]enefits
 #medical
 [M|m]edical
-#test result
-[T|t]est\sresult
+#eaxm or test result
+([E|e]xam|[T|t]est)\sresult
 #therapy
 [T|t]herapy
 #prescription
@@ -227,3 +227,15 @@ M\.?I\.?T\.?\s[C|c]orporation
 [H|h]uman\sresearch
 #consent
 [C|c]onsent
+#thesis
+[T|t]hesis
+#date of birth
+[D|d]ate\s[O|o]f\s[B|b]birth
+#DOB
+D\.?O\.?B\.?
+#place of birth
+[P|p]lace\s[O|o]f\s[B|b]birth
+#financial aid
+[F|f]inancial\s[A|a]id
+#search committee 
+[S|s]earch\s[C|c]ommittee
